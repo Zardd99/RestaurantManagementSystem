@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using RestaurantManagementSystem.Models;
 using RestaurantManagementSystem.Services;
@@ -45,10 +46,10 @@ namespace RestaurantManagementSystem.Managers
             return allItems.FindAll(item => item.Availability);
         }
 
-        public async Task<List<MenuItem>> GetMenuItemsByCategoryAsync(string category)
+        public async Task<List<MenuItem>> GetMenuItemsByCategoryAsync(string categoryId)
         {
             var allItems = await GetMenuItemsAsync();
-            return allItems.FindAll(item => item.Category == category);
+            return allItems.FindAll(item => item.Category?.Id == categoryId);
         }
 
         public async Task<List<MenuItem>> GetChefSpecialsAsync()

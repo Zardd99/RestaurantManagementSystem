@@ -4,6 +4,20 @@ using System.ComponentModel.DataAnnotations;
 namespace RestaurantManagementSystem
 {
     // Request models
+    public class ReviewCreateRequest
+    {
+        [Required]
+        public string MenuItemId { get; set; }
+
+        [Required]
+        [Range(1, 5)]
+        public int Rating { get; set; }
+
+        public string Comment { get; set; }
+
+        [Required]
+        public string CustomerName { get; set; }
+    }
 
     public class SupplierCreateRequest
     {
@@ -42,5 +56,31 @@ namespace RestaurantManagementSystem
         public string Name { get; set; }
 
         public string Description { get; set; }
+    }
+
+    // If you need MenuItemForm (alternative to MenuItemCreateRequest)
+    public partial class MenuItemForm
+    {
+        [Required]
+        public string Name { get; set; }
+
+        [Required]
+        public string Description { get; set; }
+
+        [Required]
+        [Range(0.01, double.MaxValue)]
+        public decimal Price { get; set; }
+
+        [Required]
+        public string CategoryId { get; set; }
+
+        public string ImageUrl { get; set; }
+
+        public bool IsAvailable { get; set; } = true;
+
+        public string Ingredients { get; set; }
+
+        [Range(0, int.MaxValue)]
+        public int PreparationTime { get; set; }
     }
 }

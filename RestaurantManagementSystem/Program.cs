@@ -35,6 +35,9 @@ namespace RestaurantManagementSystem
 
         private static void ConfigureServices(IServiceCollection services)
         {
+            // Register Configuration
+            services.AddSingleton<IConfiguration>(Configuration);
+
             // Services
             services.AddSingleton<IApiClient, ApiClient>();
 
@@ -47,18 +50,36 @@ namespace RestaurantManagementSystem
             services.AddTransient<CategoryManager>();
             services.AddTransient<MenuItemManager>();
 
-            // Forms
+            // Forms - Register MainForm with all its dependencies
+            services.AddTransient<MainForm>(provider =>
+            {
+                return new MainForm(
+                    provider.GetService<IApiClient>(),
+                    provider.GetService<UserManager>(),
+                    provider.GetService<OrderManager>(),
+                    provider.GetService<ReviewManager>(),
+                    provider.GetService<SupplierManager>(),
+                    provider.GetService<ReceiptManager>(),
+                    provider.GetService<CategoryManager>(),
+                    provider.GetService<MenuItemManager>()
+                );
+            });
+
             services.AddTransient<LoginForm>();
-            services.AddTransient<MainForm>();
             services.AddTransient<UsersForm>();
             services.AddTransient<OrdersForm>();
             services.AddTransient<ReviewsForm>();
             services.AddTransient<SuppliersForm>();
+            services.AddTransient<ReceiptsForm>();
+            services.AddTransient<CategoriesForm>();
             services.AddTransient<MenuForm>();
 
             // Dialogs
             services.AddTransient<OrderForm>();
             services.AddTransient<MenuItemForm>();
+            services.AddTransient<StatusUpdateForm>();
+            services.AddTransient<OrderStatsForm>();
+            services.AddTransient<OrderItemForm>();
         }
     }
 }

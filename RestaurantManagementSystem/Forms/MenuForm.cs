@@ -28,104 +28,113 @@ namespace RestaurantManagementSystem
 
         private void InitializeComponent()
         {
-            this.dataGridView = new DataGridView();
-            this.btnAdd = new Button();
-            this.btnEdit = new Button();
-            this.btnDelete = new Button();
-            this.btnRefresh = new Button();
-            this.txtSearch = new TextBox();
-            this.lblSearch = new Label();
-            this.panelControls = new Panel();
-
-            ((ISupportInitialize)this.dataGridView).BeginInit();
-            this.panelControls.SuspendLayout();
-            this.SuspendLayout();
-
+            dataGridView = new DataGridView();
+            btnAdd = new Button();
+            btnEdit = new Button();
+            btnDelete = new Button();
+            btnRefresh = new Button();
+            txtSearch = new TextBox();
+            lblSearch = new Label();
+            panelControls = new Panel();
+            ((ISupportInitialize)dataGridView).BeginInit();
+            panelControls.SuspendLayout();
+            SuspendLayout();
+            // 
             // dataGridView
-            this.dataGridView.AllowUserToAddRows = false;
-            this.dataGridView.AllowUserToDeleteRows = false;
-            this.dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView.Location = new Point(12, 50);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.ReadOnly = true;
-            this.dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new Size(760, 350);
-            this.dataGridView.TabIndex = 0;
-
-            // panelControls
-            this.panelControls.Controls.Add(this.lblSearch);
-            this.panelControls.Controls.Add(this.txtSearch);
-            this.panelControls.Controls.Add(this.btnRefresh);
-            this.panelControls.Controls.Add(this.btnDelete);
-            this.panelControls.Controls.Add(this.btnEdit);
-            this.panelControls.Controls.Add(this.btnAdd);
-            this.panelControls.Dock = DockStyle.Top;
-            this.panelControls.Location = new Point(0, 0);
-            this.panelControls.Name = "panelControls";
-            this.panelControls.Size = new Size(784, 40);
-            this.panelControls.TabIndex = 1;
-
+            // 
+            dataGridView.AllowUserToAddRows = false;
+            dataGridView.AllowUserToDeleteRows = false;
+            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView.Location = new Point(12, 50);
+            dataGridView.Name = "dataGridView";
+            dataGridView.ReadOnly = true;
+            dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView.Size = new Size(760, 350);
+            dataGridView.TabIndex = 0;
+            dataGridView.CellContentClick += dataGridView_CellContentClick;
+            // 
             // btnAdd
-            this.btnAdd.Location = new Point(12, 8);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new Size(75, 23);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new EventHandler(this.btnAdd_Click);
-
+            // 
+            btnAdd.Location = new Point(12, 8);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(75, 23);
+            btnAdd.TabIndex = 0;
+            btnAdd.Text = "Add";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
+            // 
             // btnEdit
-            this.btnEdit.Location = new Point(93, 8);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new Size(75, 23);
-            this.btnEdit.TabIndex = 1;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new EventHandler(this.btnEdit_Click);
-
+            // 
+            btnEdit.Location = new Point(93, 8);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(75, 23);
+            btnEdit.TabIndex = 1;
+            btnEdit.Text = "Edit";
+            btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.Click += btnEdit_Click;
+            // 
             // btnDelete
-            this.btnDelete.Location = new Point(174, 8);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new Size(75, 23);
-            this.btnDelete.TabIndex = 2;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new EventHandler(this.btnDelete_Click);
-
+            // 
+            btnDelete.Location = new Point(174, 8);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(75, 23);
+            btnDelete.TabIndex = 2;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
+            // 
             // btnRefresh
-            this.btnRefresh.Location = new Point(255, 8);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new Size(75, 23);
-            this.btnRefresh.TabIndex = 3;
-            this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new EventHandler(this.btnRefresh_Click);
-
+            // 
+            btnRefresh.Location = new Point(255, 8);
+            btnRefresh.Name = "btnRefresh";
+            btnRefresh.Size = new Size(75, 23);
+            btnRefresh.TabIndex = 3;
+            btnRefresh.Text = "Refresh";
+            btnRefresh.UseVisualStyleBackColor = true;
+            btnRefresh.Click += btnRefresh_Click;
+            // 
             // txtSearch
-            this.txtSearch.Location = new Point(450, 10);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new Size(200, 20);
-            this.txtSearch.TabIndex = 4;
-            this.txtSearch.TextChanged += new EventHandler(this.txtSearch_TextChanged);
-
+            // 
+            txtSearch.Location = new Point(450, 10);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(200, 23);
+            txtSearch.TabIndex = 4;
+            txtSearch.TextChanged += txtSearch_TextChanged;
+            // 
             // lblSearch
-            this.lblSearch.AutoSize = true;
-            this.lblSearch.Location = new Point(400, 13);
-            this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new Size(44, 13);
-            this.lblSearch.TabIndex = 5;
-            this.lblSearch.Text = "Search:";
-
+            // 
+            lblSearch.AutoSize = true;
+            lblSearch.Location = new Point(400, 13);
+            lblSearch.Name = "lblSearch";
+            lblSearch.Size = new Size(45, 15);
+            lblSearch.TabIndex = 5;
+            lblSearch.Text = "Search:";
+            // 
+            // panelControls
+            // 
+            panelControls.Controls.Add(lblSearch);
+            panelControls.Controls.Add(txtSearch);
+            panelControls.Controls.Add(btnRefresh);
+            panelControls.Controls.Add(btnDelete);
+            panelControls.Controls.Add(btnEdit);
+            panelControls.Controls.Add(btnAdd);
+            panelControls.Dock = DockStyle.Top;
+            panelControls.Location = new Point(0, 0);
+            panelControls.Name = "panelControls";
+            panelControls.Size = new Size(784, 40);
+            panelControls.TabIndex = 1;
+            // 
             // MenuForm
-            this.ClientSize = new Size(784, 411);
-            this.Controls.Add(this.panelControls);
-            this.Controls.Add(this.dataGridView);
-            this.Name = "MenuForm";
-            this.Text = "Menu Management";
-            ((ISupportInitialize)this.dataGridView).EndInit();
-            this.panelControls.ResumeLayout(false);
-            this.panelControls.PerformLayout();
-            this.ResumeLayout(false);
+            // 
+            ClientSize = new Size(784, 411);
+            Controls.Add(panelControls);
+            Controls.Add(dataGridView);
+            Name = "MenuForm";
+            Text = "Menu Management";
+            ((ISupportInitialize)dataGridView).EndInit();
+            panelControls.ResumeLayout(false);
+            panelControls.PerformLayout();
+            ResumeLayout(false);
         }
 
         private DataGridView dataGridView;
@@ -249,12 +258,17 @@ namespace RestaurantManagementSystem
             else
             {
                 var filtered = _menuItems.Where(m =>
-                    m.Name.Contains(txtSearch.Text, StringComparison.OrdinalIgnoreCase) ||
-                    m.Description.Contains(txtSearch.Text, StringComparison.OrdinalIgnoreCase) ||
-                    m.Category.Contains(txtSearch.Text, StringComparison.OrdinalIgnoreCase)
+                    (m.Name?.Contains(txtSearch.Text, StringComparison.OrdinalIgnoreCase) ?? false) ||
+                    (m.Description?.Contains(txtSearch.Text, StringComparison.OrdinalIgnoreCase) ?? false) ||
+                    (m.CategoryName?.Contains(txtSearch.Text, StringComparison.OrdinalIgnoreCase) ?? false)
                 ).ToList();
                 _bindingSource.DataSource = filtered;
             }
+        }
+
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

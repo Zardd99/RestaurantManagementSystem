@@ -33,7 +33,7 @@ namespace RestaurantManagementSystem
             txtName.Text = _existingItem.Name;
             txtDescription.Text = _existingItem.Description;
             numPrice.Value = _existingItem.Price;
-            txtCategory.Text = _existingItem.Category;
+            txtCategory.Text = _existingItem.CategoryId; // Store the ID for updates
             txtImage.Text = _existingItem.Image;
             numPreparationTime.Value = _existingItem.PreparationTime;
             chkAvailability.Checked = _existingItem.Availability;

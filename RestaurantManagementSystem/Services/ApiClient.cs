@@ -34,6 +34,10 @@ namespace RestaurantManagementSystem.Services
                 _httpClient.DefaultRequestHeaders.Authorization =
                     new AuthenticationHeaderValue("Bearer", Token);
             }
+            else
+            {
+                _httpClient.DefaultRequestHeaders.Remove("Authorization");
+            }
         }
 
         public async Task<LoginResponse> LoginAsync(LoginRequest request)
@@ -292,6 +296,8 @@ namespace RestaurantManagementSystem.Services
                 PropertyNameCaseInsensitive = true
             });
         }
+
+
 
         // Review methods
         public async Task<List<Review>> GetReviewsAsync()

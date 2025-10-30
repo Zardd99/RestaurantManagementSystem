@@ -1,17 +1,20 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using Microsoft.Extensions.DependencyInjection;
 using RestaurantManagementSystem.Models;
 using RestaurantManagementSystem.Services;
+using System;
+using System.Windows.Forms;
 
 namespace RestaurantManagementSystem.Forms
 {
     public partial class LoginForm : Form
     {
         private readonly IApiClient _apiClient;
+        private readonly IServiceProvider _serviceProvider;
 
-        public LoginForm(IApiClient apiClient)
+        public LoginForm(IApiClient apiClient, IServiceProvider serviceProvider)
         {
             _apiClient = apiClient;
+            _serviceProvider = serviceProvider;
             InitializeComponent();
         }
 
@@ -31,7 +34,7 @@ namespace RestaurantManagementSystem.Forms
                 {
                     _apiClient.Token = response.Token;
 
-                    var mainForm = Program.ServiceProvider.GetService<MainForm>();
+                    var mainForm = _serviceProvider.GetService<MainForm>();
                     mainForm.CurrentUser = response.User;
                     mainForm.Show();
                     this.Hide();
@@ -47,6 +50,11 @@ namespace RestaurantManagementSystem.Forms
                 MessageBox.Show($"Login error: {ex.Message}", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

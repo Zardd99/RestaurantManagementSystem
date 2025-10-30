@@ -1,4 +1,7 @@
-﻿namespace RestaurantManagementSystem.Forms
+﻿using System.Drawing;
+using System.Windows.Forms;
+
+namespace RestaurantManagementSystem.Forms
 {
     partial class LoginForm : Form
     {
@@ -9,6 +12,11 @@
         private Label lblEmail;
         private Label lblPassword;
         private Label lblTitle;
+        private Label lblSubtitle;
+        private Panel panelLeft;
+        private Panel panelRight;
+        private PictureBox pictureBoxLogo;
+        private Label lblWelcome;
 
         protected override void Dispose(bool disposing)
         {
@@ -21,79 +29,186 @@
 
         private void InitializeComponent()
         {
-            this.lblTitle = new Label();
-            this.lblEmail = new Label();
-            this.txtEmail = new TextBox();
-            this.lblPassword = new Label();
-            this.txtPassword = new TextBox();
-            this.btnLogin = new Button();
-            this.SuspendLayout();
-
+            panelLeft = new Panel();
+            lblWelcome = new Label();
+            pictureBoxLogo = new PictureBox();
+            panelRight = new Panel();
+            lblTitle = new Label();
+            lblSubtitle = new Label();
+            lblEmail = new Label();
+            txtEmail = new TextBox();
+            lblPassword = new Label();
+            txtPassword = new TextBox();
+            btnLogin = new Button();
+            panelLeft.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
+            panelRight.SuspendLayout();
+            SuspendLayout();
+            // 
+            // panelLeft
+            // 
+            panelLeft.BackColor = Color.FromArgb(41, 128, 185);
+            panelLeft.Controls.Add(lblWelcome);
+            panelLeft.Controls.Add(pictureBoxLogo);
+            panelLeft.Dock = DockStyle.Left;
+            panelLeft.Location = new Point(0, 0);
+            panelLeft.Name = "panelLeft";
+            panelLeft.Size = new Size(300, 500);
+            panelLeft.TabIndex = 0;
+            // 
+            // lblWelcome
+            // 
+            lblWelcome.AutoSize = true;
+            lblWelcome.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            lblWelcome.ForeColor = Color.White;
+            lblWelcome.Location = new Point(30, 280);
+            lblWelcome.Name = "lblWelcome";
+            lblWelcome.Size = new Size(240, 96);
+            lblWelcome.TabIndex = 1;
+            lblWelcome.Text = "Welcome to\r\nRestaurant\r\nManagement";
+            lblWelcome.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // pictureBoxLogo
+            // 
+            pictureBoxLogo.BackColor = Color.White;
+            pictureBoxLogo.Location = new Point(75, 80);
+            pictureBoxLogo.Name = "pictureBoxLogo";
+            pictureBoxLogo.Size = new Size(150, 150);
+            pictureBoxLogo.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBoxLogo.TabIndex = 0;
+            pictureBoxLogo.TabStop = false;
+            // 
+            // panelRight
+            // 
+            panelRight.BackColor = Color.White;
+            panelRight.Controls.Add(btnLogin);
+            panelRight.Controls.Add(txtPassword);
+            panelRight.Controls.Add(lblPassword);
+            panelRight.Controls.Add(txtEmail);
+            panelRight.Controls.Add(lblEmail);
+            panelRight.Controls.Add(lblSubtitle);
+            panelRight.Controls.Add(lblTitle);
+            panelRight.Dock = DockStyle.Fill;
+            panelRight.Location = new Point(300, 0);
+            panelRight.Name = "panelRight";
+            panelRight.Size = new Size(400, 500);
+            panelRight.TabIndex = 1;
+            // 
             // lblTitle
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Bold);
-            this.lblTitle.Location = new Point(80, 30);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new Size(240, 26);
-            this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "Restaurant Management";
-            this.lblTitle.TextAlign = ContentAlignment.MiddleCenter;
-
+            // 
+            lblTitle.AutoSize = true;
+            lblTitle.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
+            lblTitle.ForeColor = Color.FromArgb(44, 62, 80);
+            lblTitle.Location = new Point(50, 80);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(103, 45);
+            lblTitle.TabIndex = 0;
+            lblTitle.Text = "Login";
+            // 
+            // lblSubtitle
+            // 
+            lblSubtitle.AutoSize = true;
+            lblSubtitle.Font = new Font("Segoe UI", 10F);
+            lblSubtitle.ForeColor = Color.FromArgb(127, 140, 141);
+            lblSubtitle.Location = new Point(50, 130);
+            lblSubtitle.Name = "lblSubtitle";
+            lblSubtitle.Size = new Size(234, 19);
+            lblSubtitle.TabIndex = 1;
+            lblSubtitle.Text = "Please login to access your account";
+            // 
             // lblEmail
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new Point(50, 90);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new Size(35, 13);
-            this.lblEmail.TabIndex = 1;
-            this.lblEmail.Text = "Email:";
-
+            // 
+            lblEmail.AutoSize = true;
+            lblEmail.Font = new Font("Segoe UI", 10F, FontStyle.Regular);
+            lblEmail.ForeColor = Color.FromArgb(52, 73, 94);
+            lblEmail.Location = new Point(50, 190);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new Size(46, 19);
+            lblEmail.TabIndex = 2;
+            lblEmail.Text = "Email:";
+            // 
             // txtEmail
-            this.txtEmail.Location = new Point(120, 87);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new Size(200, 20);
-            this.txtEmail.TabIndex = 2;
-
+            // 
+            txtEmail.BackColor = Color.FromArgb(236, 240, 241);
+            txtEmail.BorderStyle = BorderStyle.None;
+            txtEmail.Font = new Font("Segoe UI", 12F);
+            txtEmail.ForeColor = Color.FromArgb(44, 62, 80);
+            txtEmail.Location = new Point(50, 215);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(300, 22);
+            txtEmail.TabIndex = 3;
+            txtEmail.Text = "";
+            // 
             // lblPassword
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new Point(50, 130);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new Size(56, 13);
-            this.lblPassword.TabIndex = 3;
-            this.lblPassword.Text = "Password:";
-
+            // 
+            lblPassword.AutoSize = true;
+            lblPassword.Font = new Font("Segoe UI", 10F, FontStyle.Regular);
+            lblPassword.ForeColor = Color.FromArgb(52, 73, 94);
+            lblPassword.Location = new Point(50, 270);
+            lblPassword.Name = "lblPassword";
+            lblPassword.Size = new Size(70, 19);
+            lblPassword.TabIndex = 4;
+            lblPassword.Text = "Password:";
+            // 
             // txtPassword
-            this.txtPassword.Location = new Point(120, 127);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new Size(200, 20);
-            this.txtPassword.TabIndex = 4;
-
+            // 
+            txtPassword.BackColor = Color.FromArgb(236, 240, 241);
+            txtPassword.BorderStyle = BorderStyle.None;
+            txtPassword.Font = new Font("Segoe UI", 12F);
+            txtPassword.ForeColor = Color.FromArgb(44, 62, 80);
+            txtPassword.Location = new Point(50, 295);
+            txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '●';
+            txtPassword.Size = new Size(300, 22);
+            txtPassword.TabIndex = 5;
+            // 
             // btnLogin
-            this.btnLogin.Location = new Point(120, 170);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new Size(120, 30);
-            this.btnLogin.TabIndex = 5;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new EventHandler(this.btnLogin_Click);
-
+            // 
+            btnLogin.BackColor = Color.FromArgb(41, 128, 185);
+            btnLogin.Cursor = Cursors.Hand;
+            btnLogin.FlatAppearance.BorderSize = 0;
+            btnLogin.FlatStyle = FlatStyle.Flat;
+            btnLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnLogin.ForeColor = Color.White;
+            btnLogin.Location = new Point(50, 360);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(300, 45);
+            btnLogin.TabIndex = 6;
+            btnLogin.Text = "LOGIN";
+            btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
+            btnLogin.MouseEnter += BtnLogin_MouseEnter;
+            btnLogin.MouseLeave += BtnLogin_MouseLeave;
+            // 
             // LoginForm
-            this.AutoScaleDimensions = new SizeF(6F, 13F);
-            this.AutoScaleMode = AutoScaleMode.Font;
-            this.ClientSize = new Size(384, 241);
-            this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.lblPassword);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.lblEmail);
-            this.Controls.Add(this.lblTitle);
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.Name = "LoginForm";
-            this.StartPosition = FormStartPosition.CenterScreen;
-            this.Text = "Login";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(700, 500);
+            Controls.Add(panelRight);
+            Controls.Add(panelLeft);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            Name = "LoginForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Restaurant Management System - Login";
+            Load += LoginForm_Load;
+            panelLeft.ResumeLayout(false);
+            panelLeft.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
+            panelRight.ResumeLayout(false);
+            panelRight.PerformLayout();
+            ResumeLayout(false);
+        }
+
+        private void BtnLogin_MouseEnter(object sender, System.EventArgs e)
+        {
+            btnLogin.BackColor = Color.FromArgb(52, 152, 219);
+        }
+
+        private void BtnLogin_MouseLeave(object sender, System.EventArgs e)
+        {
+            btnLogin.BackColor = Color.FromArgb(41, 128, 185);
         }
     }
 }
