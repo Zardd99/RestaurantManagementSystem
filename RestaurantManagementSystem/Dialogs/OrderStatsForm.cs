@@ -15,15 +15,19 @@ namespace RestaurantManagementSystem
 
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            this.ClientSize = new System.Drawing.Size(400, 300);
-            this.Name = "OrderStatsForm";
-            this.Text = "Order Statistics";
-            this.StartPosition = FormStartPosition.CenterParent;
-            this.FormBorderStyle = FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.ResumeLayout(false);
+            SuspendLayout();
+            // 
+            // OrderStatsForm
+            // 
+            ClientSize = new Size(400, 300);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "OrderStatsForm";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Order Statistics";
+            Load += OrderStatsForm_Load;
+            ResumeLayout(false);
         }
 
         private void InitializeForm(OrderStats stats)
@@ -77,6 +81,11 @@ namespace RestaurantManagementSystem
             panel.Controls.Add(lblValue);
 
             y += 25;
+        }
+
+        private void OrderStatsForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

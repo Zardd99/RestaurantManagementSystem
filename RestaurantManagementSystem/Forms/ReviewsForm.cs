@@ -26,9 +26,6 @@ namespace RestaurantManagementSystem
         private void InitializeComponent()
         {
             SuspendLayout();
-            // 
-            // ReviewsForm
-            // 
             ClientSize = new Size(800, 450);
             Name = "ReviewsForm";
             Text = "Review Management";
@@ -53,6 +50,39 @@ namespace RestaurantManagementSystem
                 AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill,
                 SelectionMode = DataGridViewSelectionMode.FullRowSelect
             };
+
+            // Configure columns for the new structure
+            dataGridView.Columns.Clear();
+            dataGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "User.Name",
+                HeaderText = "User",
+                Name = "UserName"
+            });
+            dataGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "MenuItem.Name",
+                HeaderText = "Menu Item",
+                Name = "MenuItemName"
+            });
+            dataGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "Rating",
+                HeaderText = "Rating",
+                Name = "Rating"
+            });
+            dataGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "Comment",
+                HeaderText = "Comment",
+                Name = "Comment"
+            });
+            dataGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "Date",
+                HeaderText = "Date",
+                Name = "Date"
+            });
 
             var panel = new Panel
             {
@@ -94,11 +124,23 @@ namespace RestaurantManagementSystem
         private void btnAdd_Click(object sender, EventArgs e)
         {
             // Implementation for adding review
+            MessageBox.Show("Add review functionality would be implemented here", "Add Review",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            if (dataGridView.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a review to edit.", "No Selection",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             // Implementation for editing review
+            var selectedReview = dataGridView.SelectedRows[0].DataBoundItem as Review;
+            MessageBox.Show($"Edit review functionality would be implemented here", "Edit Review",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private async void btnDelete_Click(object sender, EventArgs e)

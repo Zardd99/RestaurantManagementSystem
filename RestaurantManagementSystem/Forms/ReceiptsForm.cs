@@ -25,11 +25,12 @@ namespace RestaurantManagementSystem
 
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "ReceiptsForm";
-            this.Text = "Receipt Management";
-            this.ResumeLayout(false);
+            SuspendLayout();
+            ClientSize = new Size(800, 450);
+            Name = "ReceiptsForm";
+            Text = "Receipt Management";
+            Load += ReceiptsForm_Load;
+            ResumeLayout(false);
         }
 
         private DataGridView dataGridView;
@@ -49,6 +50,46 @@ namespace RestaurantManagementSystem
                 AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill,
                 SelectionMode = DataGridViewSelectionMode.FullRowSelect
             };
+
+            // Configure columns for the new structure
+            dataGridView.Columns.Clear();
+            dataGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "ReceiptNumber",
+                HeaderText = "Receipt #",
+                Name = "ReceiptNumber"
+            });
+            dataGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "Customer.Name",
+                HeaderText = "Customer",
+                Name = "CustomerName"
+            });
+            dataGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "TotalAmount",
+                HeaderText = "Amount",
+                Name = "TotalAmount",
+                DefaultCellStyle = new DataGridViewCellStyle { Format = "C2" }
+            });
+            dataGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "PaymentMethod",
+                HeaderText = "Payment Method",
+                Name = "PaymentMethod"
+            });
+            dataGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "PaymentStatus",
+                HeaderText = "Status",
+                Name = "PaymentStatus"
+            });
+            dataGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "IssuedAt",
+                HeaderText = "Date",
+                Name = "IssuedAt"
+            });
 
             var panel = new Panel
             {
@@ -90,6 +131,8 @@ namespace RestaurantManagementSystem
         private void btnCreate_Click(object sender, EventArgs e)
         {
             // Implementation for creating receipt
+            MessageBox.Show("Create receipt functionality would be implemented here", "Create Receipt",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnView_Click(object sender, EventArgs e)
@@ -119,6 +162,11 @@ namespace RestaurantManagementSystem
                 MessageBox.Show("Print functionality would be implemented here", "Print",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void ReceiptsForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

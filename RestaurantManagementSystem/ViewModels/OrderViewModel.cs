@@ -1,33 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using RestaurantManagementSystem.Models;
+﻿using RestaurantManagementSystem.Models;
 
-namespace RestaurantManagementSystem.ViewModels
+public class OrderViewModel
 {
-    public class OrderViewModel
-    {
-        public string Id { get; set; }
-        public int ItemCount { get; set; }
-        public decimal TotalAmount { get; set; }
-        public string Status { get; set; }
-        public string Customer { get; set; }
-        public string OrderType { get; set; }
-        public DateTime OrderDate { get; set; }
-        public string StatusDisplay => Status?.ToUpper();
+    public string Id { get; set; }
+    public string Customer { get; set; }
+    public string Status { get; set; }
+    public decimal TotalAmount { get; set; }
+    public string OrderType { get; set; }
+    public int? TableNumber { get; set; }
+    public DateTime OrderDate { get; set; }
+    public int ItemCount { get; set; }
 
-        public static OrderViewModel FromModel(Order order)
+    public static OrderViewModel FromModel(Order order)
+    {
+        return new OrderViewModel
         {
-            return new OrderViewModel
-            {
-                Id = order.Id,
-                ItemCount = order.Items?.Count ?? 0,
-                TotalAmount = order.TotalAmount,
-                Status = order.Status,
-                Customer = order.Customer,
-                OrderType = order.OrderType,
-                OrderDate = order.OrderDate
-            };
-        }
+            Id = order.Id,
+            Customer = order.Customer,
+            Status = order.Status,
+            TotalAmount = order.TotalAmount,
+            OrderType = order.OrderType,
+            TableNumber = order.TableNumber,
+            OrderDate = order.OrderDate,
+            ItemCount = order.Items?.Count ?? 0
+        };
     }
 }

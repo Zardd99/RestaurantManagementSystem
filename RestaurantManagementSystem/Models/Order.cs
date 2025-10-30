@@ -7,7 +7,7 @@ namespace RestaurantManagementSystem.Models
     public class OrderItem
     {
         [JsonPropertyName("menuItem")]
-        public string MenuItem { get; set; }
+        public MenuItem MenuItem { get; set; }
 
         [JsonPropertyName("quantity")]
         public int Quantity { get; set; }

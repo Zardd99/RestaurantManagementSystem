@@ -25,7 +25,10 @@ namespace RestaurantManagementSystem.Models
         public DateTime IssuedAt { get; set; }
 
         [JsonPropertyName("customer")]
-        public string Customer { get; set; }
+        public User Customer { get; set; }  // Changed from string to User object
+
+        [JsonPropertyName("order")]
+        public Order Order { get; set; }  // Added Order object if needed
     }
 
     public class ReceiptCreateRequest

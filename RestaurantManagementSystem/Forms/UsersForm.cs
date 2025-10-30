@@ -26,14 +26,12 @@ namespace RestaurantManagementSystem
 
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // UsersForm
-            // 
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "UsersForm";
-            this.Text = "User Management";
-            this.ResumeLayout(false);
+            SuspendLayout();
+            ClientSize = new Size(800, 450);
+            Name = "UsersForm";
+            Text = "User Management";
+            Load += UsersForm_Load;
+            ResumeLayout(false);
         }
 
         private DataGridView dataGridView;
@@ -53,6 +51,39 @@ namespace RestaurantManagementSystem
                 AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill,
                 SelectionMode = DataGridViewSelectionMode.FullRowSelect
             };
+
+            // Configure columns
+            dataGridView.Columns.Clear();
+            dataGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "Name",
+                HeaderText = "Name",
+                Name = "Name"
+            });
+            dataGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "Email",
+                HeaderText = "Email",
+                Name = "Email"
+            });
+            dataGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "Role",
+                HeaderText = "Role",
+                Name = "Role"
+            });
+            dataGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "Phone",
+                HeaderText = "Phone",
+                Name = "Phone"
+            });
+            dataGridView.Columns.Add(new DataGridViewCheckBoxColumn
+            {
+                DataPropertyName = "IsActive",
+                HeaderText = "Active",
+                Name = "IsActive"
+            });
 
             var panel = new Panel
             {
@@ -96,11 +127,23 @@ namespace RestaurantManagementSystem
         private void btnAdd_Click(object sender, EventArgs e)
         {
             // Implementation for adding user
+            MessageBox.Show("Add user functionality would be implemented here", "Add User",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            if (dataGridView.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a user to edit.", "No Selection",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             // Implementation for editing user
+            var selectedUser = dataGridView.SelectedRows[0].DataBoundItem as UserViewModel;
+            MessageBox.Show($"Edit user {selectedUser?.Name} functionality would be implemented here", "Edit User",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private async void btnDelete_Click(object sender, EventArgs e)
@@ -132,6 +175,11 @@ namespace RestaurantManagementSystem
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             LoadUsers();
+        }
+
+        private void UsersForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
