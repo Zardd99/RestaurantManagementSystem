@@ -1,4 +1,4 @@
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using RestaurantManagementSystem.Forms;
 using RestaurantManagementSystem.Managers;
 using RestaurantManagementSystem.Models;
@@ -230,6 +230,11 @@ namespace RestaurantManagementSystem
                     e.Cancel = true;
                 }
             }
+        }
+
+        private void panelCards_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

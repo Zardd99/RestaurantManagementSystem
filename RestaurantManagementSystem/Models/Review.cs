@@ -9,10 +9,10 @@ namespace RestaurantManagementSystem.Models
         public string Id { get; set; }
 
         [JsonPropertyName("user")]
-        public User User { get; set; }  // Changed from string to User object
+        public User User { get; set; }  
 
         [JsonPropertyName("menuItem")]
-        public MenuItem MenuItem { get; set; }  // Changed from string to MenuItem object
+        public MenuItem MenuItem { get; set; } 
 
         [JsonPropertyName("rating")]
         public int Rating { get; set; }

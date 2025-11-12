@@ -522,6 +522,11 @@ namespace RestaurantManagementSystem.Services
             var response = await _httpClient.DeleteAsync($"{_baseUrl}/categories/{id}");
             return response.IsSuccessStatusCode;
         }
+
+        public Task<User> GetUserAsync(string id)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     public class ApiResponse<T>

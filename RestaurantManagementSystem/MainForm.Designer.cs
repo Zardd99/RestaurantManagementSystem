@@ -56,9 +56,9 @@ namespace RestaurantManagementSystem
             statusStrip = new StatusStrip();
             statusLabel = new ToolStripStatusLabel();
             panelHeader = new Panel();
-            lblWelcome = new Label();
-            lblUserInfo = new Label();
             pictureBoxLogo = new PictureBox();
+            lblUserInfo = new Label();
+            lblWelcome = new Label();
             panelMain = new Panel();
             panelCards = new Panel();
             btnUsers = new Button();
@@ -68,7 +68,6 @@ namespace RestaurantManagementSystem
             btnSuppliers = new Button();
             btnReceipts = new Button();
             btnCategories = new Button();
-
             menuStrip.SuspendLayout();
             statusStrip.SuspendLayout();
             panelHeader.SuspendLayout();
@@ -76,7 +75,6 @@ namespace RestaurantManagementSystem
             panelMain.SuspendLayout();
             panelCards.SuspendLayout();
             SuspendLayout();
-
             // 
             // menuStrip
             // 
@@ -86,87 +84,74 @@ namespace RestaurantManagementSystem
             menuStrip.Location = new Point(0, 0);
             menuStrip.Name = "menuStrip";
             menuStrip.Padding = new Padding(10, 5, 0, 5);
-            menuStrip.Size = new Size(1200, 34);
+            menuStrip.Size = new Size(1200, 33);
             menuStrip.TabIndex = 0;
-
             // 
             // menuManagementToolStripMenuItem
             // 
-            menuManagementToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
-                usersToolStripMenuItem, menuToolStripMenuItem, ordersToolStripMenuItem,
-                reviewsToolStripMenuItem, suppliersToolStripMenuItem, receiptsToolStripMenuItem,
-                categoriesToolStripMenuItem });
+            menuManagementToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { usersToolStripMenuItem, menuToolStripMenuItem, ordersToolStripMenuItem, reviewsToolStripMenuItem, suppliersToolStripMenuItem, receiptsToolStripMenuItem, categoriesToolStripMenuItem });
             menuManagementToolStripMenuItem.ForeColor = Color.White;
             menuManagementToolStripMenuItem.Name = "menuManagementToolStripMenuItem";
-            menuManagementToolStripMenuItem.Size = new Size(155, 24);
+            menuManagementToolStripMenuItem.Size = new Size(183, 23);
             menuManagementToolStripMenuItem.Text = "📋 Management Modules";
-
             // 
             // usersToolStripMenuItem
             // 
             usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            usersToolStripMenuItem.Size = new Size(150, 24);
+            usersToolStripMenuItem.Size = new Size(166, 24);
             usersToolStripMenuItem.Text = "👥 Users";
             usersToolStripMenuItem.Click += usersToolStripMenuItem_Click;
-
             // 
             // menuToolStripMenuItem
             // 
             menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            menuToolStripMenuItem.Size = new Size(150, 24);
+            menuToolStripMenuItem.Size = new Size(166, 24);
             menuToolStripMenuItem.Text = "🍽️ Menu";
             menuToolStripMenuItem.Click += menuToolStripMenuItem_Click;
-
             // 
             // ordersToolStripMenuItem
             // 
             ordersToolStripMenuItem.Name = "ordersToolStripMenuItem";
-            ordersToolStripMenuItem.Size = new Size(150, 24);
+            ordersToolStripMenuItem.Size = new Size(166, 24);
             ordersToolStripMenuItem.Text = "📦 Orders";
             ordersToolStripMenuItem.Click += ordersToolStripMenuItem_Click;
-
             // 
             // reviewsToolStripMenuItem
             // 
             reviewsToolStripMenuItem.Name = "reviewsToolStripMenuItem";
-            reviewsToolStripMenuItem.Size = new Size(150, 24);
+            reviewsToolStripMenuItem.Size = new Size(166, 24);
             reviewsToolStripMenuItem.Text = "⭐ Reviews";
             reviewsToolStripMenuItem.Click += reviewsToolStripMenuItem_Click;
-
             // 
             // suppliersToolStripMenuItem
             // 
             suppliersToolStripMenuItem.Name = "suppliersToolStripMenuItem";
-            suppliersToolStripMenuItem.Size = new Size(150, 24);
+            suppliersToolStripMenuItem.Size = new Size(166, 24);
             suppliersToolStripMenuItem.Text = "🚚 Suppliers";
             suppliersToolStripMenuItem.Click += suppliersToolStripMenuItem_Click;
-
             // 
             // receiptsToolStripMenuItem
             // 
             receiptsToolStripMenuItem.Name = "receiptsToolStripMenuItem";
-            receiptsToolStripMenuItem.Size = new Size(150, 24);
-            receiptsToolStripMenuItem.Text = "🧾 Receipts";
+            receiptsToolStripMenuItem.Size = new Size(166, 24);
+            receiptsToolStripMenuItem.Text = "\U0001f9fe Receipts";
             receiptsToolStripMenuItem.Click += receiptsToolStripMenuItem_Click;
-
             // 
             // categoriesToolStripMenuItem
             // 
             categoriesToolStripMenuItem.Name = "categoriesToolStripMenuItem";
-            categoriesToolStripMenuItem.Size = new Size(150, 24);
+            categoriesToolStripMenuItem.Size = new Size(166, 24);
             categoriesToolStripMenuItem.Text = "📑 Categories";
             categoriesToolStripMenuItem.Click += categoriesToolStripMenuItem_Click;
-
             // 
             // logoutToolStripMenuItem
             // 
             logoutToolStripMenuItem.Alignment = ToolStripItemAlignment.Right;
             logoutToolStripMenuItem.ForeColor = Color.White;
             logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            logoutToolStripMenuItem.Size = new Size(85, 24);
+            logoutToolStripMenuItem.Size = new Size(88, 23);
             logoutToolStripMenuItem.Text = "🚪 Logout";
             logoutToolStripMenuItem.Click += logoutToolStripMenuItem_Click;
-
             // 
             // statusStrip
             // 
@@ -177,14 +162,12 @@ namespace RestaurantManagementSystem
             statusStrip.Padding = new Padding(1, 0, 16, 0);
             statusStrip.Size = new Size(1200, 22);
             statusStrip.TabIndex = 1;
-
             // 
             // statusLabel
             // 
             statusLabel.Name = "statusLabel";
             statusLabel.Size = new Size(39, 17);
             statusLabel.Text = "Ready";
-
             // 
             // panelHeader
             // 
@@ -193,11 +176,10 @@ namespace RestaurantManagementSystem
             panelHeader.Controls.Add(lblUserInfo);
             panelHeader.Controls.Add(lblWelcome);
             panelHeader.Dock = DockStyle.Top;
-            panelHeader.Location = new Point(0, 34);
+            panelHeader.Location = new Point(0, 33);
             panelHeader.Name = "panelHeader";
             panelHeader.Size = new Size(1200, 120);
             panelHeader.TabIndex = 2;
-
             // 
             // pictureBoxLogo
             // 
@@ -208,19 +190,6 @@ namespace RestaurantManagementSystem
             pictureBoxLogo.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBoxLogo.TabIndex = 2;
             pictureBoxLogo.TabStop = false;
-
-            // 
-            // lblWelcome
-            // 
-            lblWelcome.AutoSize = true;
-            lblWelcome.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
-            lblWelcome.ForeColor = Color.White;
-            lblWelcome.Location = new Point(130, 30);
-            lblWelcome.Name = "lblWelcome";
-            lblWelcome.Size = new Size(552, 45);
-            lblWelcome.TabIndex = 0;
-            lblWelcome.Text = "Restaurant Management System";
-
             // 
             // lblUserInfo
             // 
@@ -229,22 +198,31 @@ namespace RestaurantManagementSystem
             lblUserInfo.ForeColor = Color.White;
             lblUserInfo.Location = new Point(130, 75);
             lblUserInfo.Name = "lblUserInfo";
-            lblUserInfo.Size = new Size(200, 20);
+            lblUserInfo.Size = new Size(110, 20);
             lblUserInfo.TabIndex = 1;
             lblUserInfo.Text = "Welcome back!";
-
+            // 
+            // lblWelcome
+            // 
+            lblWelcome.AutoSize = true;
+            lblWelcome.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
+            lblWelcome.ForeColor = Color.White;
+            lblWelcome.Location = new Point(130, 30);
+            lblWelcome.Name = "lblWelcome";
+            lblWelcome.Size = new Size(502, 45);
+            lblWelcome.TabIndex = 0;
+            lblWelcome.Text = "Restaurant Management System";
             // 
             // panelMain
             // 
             panelMain.BackColor = Color.FromArgb(236, 240, 241);
             panelMain.Controls.Add(panelCards);
             panelMain.Dock = DockStyle.Fill;
-            panelMain.Location = new Point(0, 154);
+            panelMain.Location = new Point(0, 153);
             panelMain.Name = "panelMain";
             panelMain.Padding = new Padding(30);
-            panelMain.Size = new Size(1200, 524);
+            panelMain.Size = new Size(1200, 525);
             panelMain.TabIndex = 3;
-
             // 
             // panelCards
             // 
@@ -259,57 +237,65 @@ namespace RestaurantManagementSystem
             panelCards.Dock = DockStyle.Fill;
             panelCards.Location = new Point(30, 30);
             panelCards.Name = "panelCards";
-            panelCards.Size = new Size(1140, 464);
+            panelCards.Size = new Size(1140, 465);
             panelCards.TabIndex = 0;
-
-            // Create card-style buttons
-            var buttonWidth = 250;
-            var buttonHeight = 150;
-            var spacing = 30;
-            var buttonsPerRow = 4;
-
+            panelCards.Paint += panelCards_Paint;
             // 
             // btnUsers
             // 
-            btnUsers = CreateModuleButton("👥 Users", 0, buttonWidth, buttonHeight, spacing, buttonsPerRow);
+            btnUsers.Location = new Point(0, 0);
+            btnUsers.Name = "btnUsers";
+            btnUsers.Size = new Size(638, 282);
+            btnUsers.TabIndex = 0;
             btnUsers.Click += usersToolStripMenuItem_Click;
-
             // 
             // btnMenu
             // 
-            btnMenu = CreateModuleButton("🍽️ Menu", 1, buttonWidth, buttonHeight, spacing, buttonsPerRow);
+            btnMenu.Location = new Point(0, 0);
+            btnMenu.Name = "btnMenu";
+            btnMenu.Size = new Size(75, 23);
+            btnMenu.TabIndex = 1;
             btnMenu.Click += menuToolStripMenuItem_Click;
-
             // 
             // btnOrders
             // 
-            btnOrders = CreateModuleButton("📦 Orders", 2, buttonWidth, buttonHeight, spacing, buttonsPerRow);
+            btnOrders.Location = new Point(0, 0);
+            btnOrders.Name = "btnOrders";
+            btnOrders.Size = new Size(75, 23);
+            btnOrders.TabIndex = 2;
             btnOrders.Click += ordersToolStripMenuItem_Click;
-
             // 
             // btnReviews
             // 
-            btnReviews = CreateModuleButton("⭐ Reviews", 3, buttonWidth, buttonHeight, spacing, buttonsPerRow);
+            btnReviews.Location = new Point(0, 0);
+            btnReviews.Name = "btnReviews";
+            btnReviews.Size = new Size(75, 23);
+            btnReviews.TabIndex = 3;
             btnReviews.Click += reviewsToolStripMenuItem_Click;
-
             // 
             // btnSuppliers
             // 
-            btnSuppliers = CreateModuleButton("🚚 Suppliers", 4, buttonWidth, buttonHeight, spacing, buttonsPerRow);
+            btnSuppliers.Location = new Point(0, 0);
+            btnSuppliers.Name = "btnSuppliers";
+            btnSuppliers.Size = new Size(75, 23);
+            btnSuppliers.TabIndex = 4;
             btnSuppliers.Click += suppliersToolStripMenuItem_Click;
-
             // 
             // btnReceipts
             // 
-            btnReceipts = CreateModuleButton("🧾 Receipts", 5, buttonWidth, buttonHeight, spacing, buttonsPerRow);
+            btnReceipts.Location = new Point(0, 0);
+            btnReceipts.Name = "btnReceipts";
+            btnReceipts.Size = new Size(75, 23);
+            btnReceipts.TabIndex = 5;
             btnReceipts.Click += receiptsToolStripMenuItem_Click;
-
             // 
             // btnCategories
             // 
-            btnCategories = CreateModuleButton("📑 Categories", 6, buttonWidth, buttonHeight, spacing, buttonsPerRow);
+            btnCategories.Location = new Point(0, 0);
+            btnCategories.Name = "btnCategories";
+            btnCategories.Size = new Size(75, 23);
+            btnCategories.TabIndex = 6;
             btnCategories.Click += categoriesToolStripMenuItem_Click;
-
             // 
             // MainForm
             // 

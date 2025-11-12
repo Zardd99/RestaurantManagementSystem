@@ -19,6 +19,11 @@ namespace RestaurantManagementSystem.Managers
             return await _apiClient.GetUsersAsync();
         }
 
+        public async Task<User> GetUserAsync(string id)
+        {
+            return await _apiClient.GetUserAsync(id);
+        }
+
         public async Task<User> CreateUserAsync(User user)
         {
             return await _apiClient.CreateUserAsync(user);

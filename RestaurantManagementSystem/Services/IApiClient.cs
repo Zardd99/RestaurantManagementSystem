@@ -9,6 +9,7 @@ namespace RestaurantManagementSystem.Services
         string Token { get; set; }
         Task<LoginResponse> LoginAsync(LoginRequest request);   
         Task<List<User>> GetUsersAsync();
+        Task<User> GetUserAsync(string id);
         Task<User> CreateUserAsync(User user);
         Task<User> UpdateUserAsync(string id, User user);
         Task<bool> DeleteUserAsync(string id);

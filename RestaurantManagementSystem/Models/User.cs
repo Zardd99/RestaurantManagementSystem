@@ -45,4 +45,27 @@ namespace RestaurantManagementSystem.Models
         public string Token { get; set; }
         public User User { get; set; }
     }
+
+    public class ApiResponse<T>
+    {
+        [JsonPropertyName("success")]
+        public bool Success { get; set; }
+
+        [JsonPropertyName("count")]
+        public int Count { get; set; }
+
+        [JsonPropertyName("users")]
+        public T Data { get; set; }
+    }
+
+    public class UserApiResponse : ApiResponse<List<User>> { }
+
+    public class SingleUserApiResponse
+    {
+        [JsonPropertyName("success")]
+        public bool Success { get; set; }
+
+        [JsonPropertyName("user")]
+        public User User { get; set; }
+    }
 }
